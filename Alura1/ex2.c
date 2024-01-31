@@ -20,7 +20,7 @@ int main()
         {
             if(palavra[i]==vogal[j])
             {
-                printf("%c", palavra[i]);
+                printf("%c ", palavra[i]);
             }
         }
     }
