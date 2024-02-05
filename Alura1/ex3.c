@@ -15,10 +15,9 @@ int main()
     srand(time(0));
     int operador = rand();
     int machinechute=operador%3;
-    int usuario;
-    int rodada=0;
     int jogador=0;
     int maquina=0;
+    int condicional=5;
 
 
 
@@ -29,7 +28,7 @@ int main()
 
     puts("INSTRUÇÕES: PARA PEDRA DIGITE (P), PARA PAPEL (L), PARA TESOURA DIGITE (T)");
 
-    for(int i=0; i < 5; i++)
+    for(int i=0; i < condicional ; i++)
     {
 
        
@@ -37,29 +36,34 @@ int main()
         puts("_____________________");
         printf("Digite sua jogada:");
         scanf(" %c", &jogada);
+        
        
         
-        //EMPATE
-        if(jogada==machine[machinechute])
-        {
-            puts("Empate");
-            continue;
-        }
-        //MAQUINA GANHANDO
-        else if(jogada=='l'&& machine[machinechute]=='t'||jogada=='t' && machine[machinechute]=='p'||jogada =='p'&& machine[machinechute]=='l')
-        {
-            puts("A MAQUINA GANHOU");
-            maquina++;
-        } 
-        //USUARIO GANHANDO      
-        else if(jogada=='t'&& machine[machinechute]=='l'||jogada=='p' && machine[machinechute]=='t'||jogada =='l'&& machine[machinechute]=='p')
-        {
-            puts("VOCÊ GANHOU");
-            jogador++;
-        }
+            //EMPATE
+            if(jogada==machine[machinechute])
+            {
+                puts("Empate");
+                continue;
+            }
+            //MAQUINA GANHANDO
+            else if(jogada=='l'&& machine[machinechute]=='t'||jogada=='t' && machine[machinechute]=='p'||jogada =='p'&& machine[machinechute]=='l')
+            {
+                puts("A MAQUINA GANHOU");
+                maquina++;
+            } 
+            //USUARIO GANHANDO      
+            else if(jogada=='t'&& machine[machinechute]=='l'||jogada=='p' && machine[machinechute]=='t'||jogada =='l'&& machine[machinechute]=='p')
+            {
+                puts("VOCÊ GANHOU");
+                jogador++;
+            }
 
-         printf("MAQUINA %d VOCÊ %d\n", maquina, jogador);
-        
+            printf("MAQUINA %d VOCÊ %d\n", maquina, jogador);
+            if(maquina==2 && jogador==2)
+            {
+                condicional++;
+            }
+            
     }
 
     return 0;
