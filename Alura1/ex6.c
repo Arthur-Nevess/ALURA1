@@ -6,24 +6,20 @@ int main()
     printf("Digite um número para ver o fatorial dele:");
     scanf("%d", &num);
     int fat=num*(num-1);
-    int inter=num;
+    const int resp = num;
 
-    for (int i=0; i<num; i++)
+    do
     {
-        
-          
-        
-            printf("%d\n", fat);
-            inter = inter -2;
-            
-            fat=fat*inter;
-        
-            if(i==num-1)
-            {
-                printf("Resposta final=");
-            }
+        printf("%d\n", fat);
+        num--;
+        fat=fat*(num-1);
+        if(fat==fat*(num-1))
+        {
+            printf("\nO Fatorial de %d = %d", resp, fat);
+            break;
+        }
 
-           
-    }
+    } while (num>0);
+    
     return 0;
 }
