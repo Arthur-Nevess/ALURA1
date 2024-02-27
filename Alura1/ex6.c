@@ -10,12 +10,12 @@ int main()
 
     do
     {
-        printf("%d\n", fat);
         num--;
         fat=fat*(num-1);
-        if(fat==fat*(num-1))
+        
+     if(fat==fat*(num-1))
         {
-            printf("\nO Fatorial de %d = %d", resp, fat);
+            printf(" %d! = %d", resp, fat);
             break;
         }
 
