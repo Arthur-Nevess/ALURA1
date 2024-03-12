@@ -8,5 +8,12 @@ int main() {
   time(&tempo);
   printf("Outro teste: %s", ctime(&tempo));
 
-  return 0;
+  //return 0;
+
+  char n =65;
+  char m=66;
+  char s=68;
+  char o=67;
+
+  printf("%c %c %c %c\n", n, m, s, o);
 }
